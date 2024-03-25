@@ -1,0 +1,412 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-white: #ffff;
+    --color-pink: #d12f7a;
+    --color-black: #000000;
+    --color-blue: #0000ff;
+    --color-purple: #8a2be2;
+    --color-yellow: #ffff00;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 10px;
+}
+
+.logo-link {
+    display: inline-block;
+    /* Garante que o link se ajuste ao tamanho da imagem */
+}
+
+.logo-link img {
+    display: block;
+    /* Faz com que a imagem ocupe todo o espaço do link */
+}
+
+
+header {
+    background-color: rgb(255, 255, 255);
+    color: #fff;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: top 0.3s ease;
+    position: relative;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav img {
+    width: 80px;
+    /* Define a largura da imagem */
+    height: auto;
+    /* Mantém a proporção da imagem */
+    margin-right: 900px;
+}
+
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li:first-child {
+    margin-right: 0;
+    margin-right: auto;
+    /* Remove a margem esquerda do primeiro item da lista para evitar espaçamento extra */
+}
+
+nav ul li a {
+    color: #000000;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+    font-size: 20px;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-color: #000000;
+    text-decoration: underline;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+footer p {
+    margin: 0;
+    text-align: center;
+    width: 50px;
+}
+
+footer {
+    background-color: #f6aa1c;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 100%;
+    display:inherit ;
+    /* Centraliza o conteúdo do footer */
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-evenly;
+    /* Distribui uniformemente o espaço entre as seções */
+    max-width: 1200px;
+    /* Define uma largura máxima para o conteúdo do footer */
+    margin: 0 auto;
+    /* Centraliza o footer na página */
+}
+
+.footer-section {
+    flex: 1;
+    padding: 0 20px;
+}
+
+.footer-section h3 {
+    margin-bottom: 15px;
+    /* Aumenta um pouco o espaço entre o título e o conteúdo */
+}
+
+.footer-section p {
+    margin: 10px 0;
+    /* Aumenta o espaçamento entre os parágrafos */
+    text-align: center;
+    justify-content: space-between;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 5px;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline;
+}
+
+#person {
+    height: 100vh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    background: var(--color-black);
+}
+
+.person-content {
+    height: 100%;
+    width: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex-direction: column;
+
+    background-color: var(--color-black);
+}
+
+.person-content div h1 {
+    color: transparent;
+
+    padding: 0px 4px;
+    position: relative;
+    width: fit-content;
+
+    font-size: 4.5rem;
+    line-height: 6rem;
+
+    animation: written_text .1s ease forwards;
+    animation-delay: 1s;
+}
+
+.person-content div h1:nth-child(1) {
+    animation-delay: 1s;
+}
+
+.person-content div h1:nth-child(2) {
+    animation-delay: 2s;
+}
+
+.person-content div h1:nth-child(3) {
+    animation: written_text_name .5s ease forwards;
+    animation-delay: 3s;
+}
+
+.person-content div h1 span {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 0px;
+    height: 60px;
+    background-color: var(--color-yellow);
+
+    animation: written_text_box .3s ease;
+    animation-delay: 2s;
+}
+
+.person-content div h1:nth-child(1) span {
+    animation-delay: 0.8s;
+}
+
+.person-content div h1:nth-child(2) span {
+    animation-delay: 1.8s;
+}
+
+.person-content div h1:nth-child(3) span {
+    animation-delay: 2.8s;
+}
+
+.person-name {
+    margin-top: 11rem;
+}
+
+.stacks-content {
+    display: flex;
+    justify-content: center;
+
+    flex-direction: column;
+    margin-top: 6rem;
+}
+
+.stacks-content h3 {
+    color: var(--color-white);
+    font-size: 1.5rem;
+
+    margin-left: 20px;
+}
+
+.stacks {
+    display: flex;
+
+    align-items: center;
+
+    flex-direction: row;
+}
+
+.stacks ul li {
+    display: flex;
+    align-items: center;
+
+    position: relative;
+
+    margin: 10px;
+    padding: 10px;
+
+    list-style: none;
+}
+
+.stacks ul li img {
+    width: 50px;
+    height: auto;
+
+    transition: transform .3s ease;
+}
+
+.stacks ul li div img:hover {
+    transform: scale(1.5);
+    cursor: pointer;
+}
+
+.stacks ul li div:hover::after {
+    content: attr(data-);
+    position: absolute;
+    top: 50px;
+    left: 10px;
+
+    width: 20px;
+    height: 20px;
+
+    color: var(--color-white);
+}
+
+.person-background {
+    height: 100vh;
+    width: 50%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    flex-direction: column;
+
+    background-image: url(./img/cattrator.jpg);
+    background-size: cover;
+    background-position: top center;
+
+    z-index: 1;
+
+}
+
+.person-background::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    z-index: -1;
+
+    height: 100%;
+    width: 100%;
+
+    background:
+        linear-gradient(270deg, transparent 30%, var(--color-black)),
+        linear-gradient(0deg, transparent 50%, var(--color-black))
+}
+
+.wrapper-profile-photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%
+}
+
+.wrapper-profile-photo img {
+    border-radius: 50%;
+}
+
+.content {
+    padding: 20px;
+    margin: 20px;
+    padding: 20px;
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    /* Adiciona uma sombra suave */
+    border: 1px solid #ccc;
+    /* Adiciona uma borda */
+    text-align: center;
+    font-size: 120%;
+    font-family: sans-serif;
+}
+
+.content h1 {
+    margin-bottom: 35px;
+}
+
+.content p {
+    margin-bottom: 15px;
+    font-size: 120%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* Adiciona espaçamento entre títulos e parágrafos */
+}
+
+@media only screen and (max-width: 600px) {
+    .content {
+        padding: 10px;
+        margin: 10px;
+    }
+
+    footer {
+        font-size: 14px;
+        /* Reduz o tamanho da fonte em dispositivos móveis */
+        background-color: #333;
+        color: #fff;
+        padding: 20px 0;
+        /* Ajuste o preenchimento conforme necessário */
+        text-align: center;
+        align-items: center;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+    }
+}
+
+@keyframes written_text {
+    100% {
+        color: var(--color-white);
+    }
+}
+
+@keyframes written_text_name {
+    100% {
+        color: var(--color-yellow);
+    }
+}
+
+@keyframes written_text_box {
+    50% {
+        width: 100%;
+        left: 0;
+    }
+
+    100% {
+        width: 0;
+        left: 100%;
+    }
+}

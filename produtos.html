@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="./favicon/fco.ico" type="img">
+    <title>FCO Peças - Produtos</title>
+    <style>
+        /* Estilos CSS aqui */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .search-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .search-container input[type=text] {
+            padding: 10px;
+            width: 70%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        .search-container button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .product {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .product img {
+            max-width: 30%;
+            height: auto;
+            display: block;
+            margin: 0 auto 10px;
+        }
+
+        .product h2 {
+            font-size: 20px;
+            margin: 0 0 10px;
+            color: #333;
+        }
+
+        .product p {
+            color: #666;
+        }
+
+        .whatsapp-button {
+            padding: 10px 20px;
+            background-color: #25d366;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <a href="./index.html" class="logo-link">
+                <img src="./favicon/fco.ico" alt="fco-logo">
+            </a>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="sobre.html">Sobre Nós</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <h1>Produtos e Marcas</h1>
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Pesquisar produtos...">
+            <button onclick="searchProducts()">Pesquisar</button>
+        </div>
+        <div id="notFoundMessage" style="display:none;">Produto não encontrado, nos envie uma mensagem para verificar a disponibilidade do produto.</div>
+        <div class="product">
+            <img src="./img/1.png" alt="Filtro 4461492">
+            <h2>Filtro de Combustível - Perkins 4461492</h2>
+            <p>Filtro de Combustível - Código 4461492.</p>
+            <p>Marca: Perkins Original</p>
+        </div>
+
+        <div class="product">
+            <img src="./img/p559000.png" alt="Filtro P559000">
+            <h2>Filtro de Lubrificação - Donaldson P559000</h2>
+            <p>Filtro de Lubrificação - Código P559000</p>
+            <p>Marca: Donaldson Original</p>
+        </div>
+
+        <div class="product">
+            <img src="./img/2.png" alt="Filtro 4816636">
+            <h2>Filtro de Combustível - Perkins 4816636</h2>
+            <p>Filtro de Combustível - Código 4816636</p>
+            <p>Marca: Perkins Original</p>
+        </div>
+
+        <div class="product">
+            <img src="./img/p551034.png" alt="Filtro P551034">
+            <h2>Filtro de Combustível - Donaldson P551034</h2>
+            <p>Filtro de Combustível - Código P551034</p>
+            <p>Marca: Donaldson Original</p>
+        </div>
+
+        <div class="product">
+            <img src="./img/W1173.png" alt="Filtro W1173">
+            <h2>Filtro de Óleo - Mann Filter W1173</h2>
+            <p>Filtro de Óleo - Código W1173</p>
+            <p>Marca: Mann Filter Original</p>
+        </div>
+
+        <!-- Adicione mais produtos conforme necessário -->
+
+    </div>
+    <div class="container">
+        <button class="whatsapp-button" onclick="openWhatsApp()">Solicite seu orçamento</button>
+    </div>
+    <script>
+        function searchProducts() {
+            var input, filter, products, product, title, i;
+            input = document.getElementById('searchInput');
+            filter = input.value.toUpperCase();
+            products = document.getElementsByClassName('product');
+            var found = false; // variável para verificar se pelo menos um produto foi encontrado
+
+            for (i = 0; i < products.length; i++) {
+                product = products[i];
+                title = product.getElementsByTagName('h2')[0];
+                if (title.innerText.toUpperCase().indexOf(filter) > -1) {
+                    product.style.display = "";
+                    found = true; // indica que pelo menos um produto foi encontrado
+                } else {
+                    product.style.display = "none";
+                }
+            }
+
+            // Se nenhum produto foi encontrado, exibir a mensagem "Produto não encontrado"
+            if (!found) {
+                var notFoundMessage = document.getElementById('notFoundMessage');
+                notFoundMessage.style.display = ""; // Exibe a mensagem de produto não encontrado
+            } else {
+                var notFoundMessage = document.getElementById('notFoundMessage');
+                notFoundMessage.style.display = "none"; // Esconde a mensagem de produto não encontrado
+            }
+        }
+
+        function openWhatsApp() {
+            // Número de telefone e mensagem pré-formatada
+            var phoneNumber = '5511976768715';
+            var message = 'Olá, gostaria de fazer um orçamento.';
+
+            // Montando a URL do WhatsApp
+            var url = 'https://api.whatsapp.com/send?phone=' + phoneNumber + '&text=' + encodeURIComponent(message);
+
+            // Abrindo uma nova janela com a URL do WhatsApp
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+<footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h3>Sobre Nós</h3>
+            <p>No mercado há mais de 7 anos, buscando o melhor para todos os clientes.</p>
+        </div>
+        <div class="footer-section">
+            <h3>Contato</h3>
+            <p>Email: fcopecas@gmail.com</p>
+            <p>Telefone: (11)97676-8715</p>
+        </div>
+        <div class="footer-section">
+            <h3>Redes Sociais</h3>
+            <ul>
+                <li><a href="https://www.facebook.com/?locale=pt_BR">Facebook</a></li>
+                <li><a
+                        href="https://twitter.com/i/flow/login?input_flow_data=%7B%22requested_variant%22%3A%22eyJsYW5nIjoicHQifQ%3D%3D%22%7D">Twitter</a>
+                </li>
+                <li><a href="https://www.instagram.com/">Instagram</a></li>
+            </ul>
+        </div>
+    </div>
+</footer>
+
+</html>
